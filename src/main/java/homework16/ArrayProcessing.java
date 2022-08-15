@@ -7,8 +7,8 @@ public class ArrayProcessing {
     public int[] resultArray(int[] array, int number) {
 
         int index = IntStream.range(0, array.length)
-                .map(i -> array.length - 1 - i)
-                .filter(i->array[i] == number)
+                .map(i -> array.length - i - 1)
+                .filter(i -> array[i] == number)
                 .findFirst().orElseThrow(() -> new RuntimeException("The array must contain number 4!"));
 
         int[] result = new int[array.length - index - 1];
